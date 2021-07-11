@@ -5,8 +5,8 @@ ENV GO_VERSION=1.13.15 \
     GOPATH=$HOME/go-packages \
     GOROOT=$HOME/go
 ENV PATH=$GOROOT/bin:$GOPATH/bin:$PATH
-RUN curl -fsSL https://dl.google.com/go/go$GO_VERSION.linux-arm64.tar.gz | tar -xzv \
-    && GO111MODULE=on go get -u -v \
+RUN curl -fsSL https://dl.google.com/go/go1.13.15.linux-arm64.tar.gz | tar -xzv
+RUN GO111MODULE=on go get -u -v \
         github.com/UnnoTed/fileb0x
 
 WORKDIR /app
