@@ -1,10 +1,10 @@
-name: CI
+name: JAV-CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ jav ]
   pull_request:
-    branches: [ master ]
+    branches: [ jav ]
 
 jobs:
   lint:
@@ -49,6 +49,6 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: atani12/xbvr:0.3.13
+          tags: atani12/xbvr-jav:0.3.13
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
