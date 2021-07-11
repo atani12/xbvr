@@ -26,7 +26,7 @@ jobs:
     - name: Check code formatting using gofmt
       uses: Jerome1337/gofmt-action@v1.0.4
   build:
-    name: Push Docker image to Docker Hub
+    name: Build image and send to Docker Hub
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -47,6 +47,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: atani12/xbvr:0.3.13
       - name: Image digest
