@@ -1,4 +1,4 @@
-name: CI
+name: JAV-CI
 
 on:
   push:
