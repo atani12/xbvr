@@ -36,7 +36,7 @@ func initDMS() {
 	var dmsConfig = &dmsConfig{
 		Path:           "",
 		IfName:         "",
-		Http:           ":1338",
+		Http:           ":1337",
 		FriendlyName:   "",
 		LogHeaders:     false,
 		NotifyInterval: 30 * time.Second,

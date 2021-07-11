@@ -2,7 +2,7 @@
   <b-navbar :fixed-top="true" type="is-light">
     <template slot="brand">
       <b-navbar-item>
-        <h1 class="title">XBVR <small>{{currentVersion}}</small></h1>
+        <h1 class="title">JAV <small>{{currentVersion}}</small></h1>
       </b-navbar-item>
     </template>
     <template slot="start">

@@ -11,7 +11,7 @@ import (
 type ObjectConfig struct {
 	Server struct {
 		BindAddress string `default:"0.0.0.0" json:"bindAddress"`
-		Port        int    `default:"9999" json:"port"`
+		Port        int    `default:"9889" json:"port"`
 	} `json:"server"`
 	Security struct {
 		Username string `default:"" json:"username"`

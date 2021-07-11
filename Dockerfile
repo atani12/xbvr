@@ -21,7 +21,7 @@ RUN cd /app && \
 FROM gcr.io/distroless/base
 COPY --from=build-env /app/xbvr /
 
-EXPOSE 9998-9999
+EXPOSE 9888-9889
 VOLUME /root/.config/
 
 ENTRYPOINT ["/xbvr"]

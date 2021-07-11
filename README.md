@@ -57,7 +57,7 @@ Please note that during the first run XBVR automatically installs `ffprobe` and 
 
 ## Quick Start
 
-Once launched, web UI is available at `http://127.0.0.1:9999`.
+Once launched, web UI is available at `http://127.0.0.1:9889`.
 
 Before anything else, you must allow the app to scan sites and populate its scene metadata library. Click through to Options -> Scene Data and "Run scraper". This can take several minutes to complete. Wait for it to finish, and then go to Options -> Folders and add the folders where your video files are stored.
 

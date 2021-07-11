@@ -1,57 +1,5 @@
 <template>
   <div class="content">
-    <div class="columns">
-      <div class="column">
-        <h3 class="title">{{$t('Mainstream sites')}}</h3>
-      </div>
-      <div class="column buttons" align="right">
-        <a class="button is-primary" v-on:click="taskScrape('_enabled')">{{$t('Run selected scrapers')}}</a>
-      </div>
-    </div>
-    <div class="columns is-multiline">
-      <div class="column is-multiline is-one-third" v-for="item in items" :key="item.id">
-        <div :class="[runningScrapers.includes(item.id) ? 'card running' : 'card']">
-          <div class="card-content content">
-            <p class="image is-32x32 is-pulled-left avatar">
-              <vue-load-image>
-                <img slot="image" :src="getImageURL(item.avatar_url ? item.avatar_url : '/ui/images/blank.png')"/>
-                <img slot="preloader" src="/ui/images/blank.png"/>
-                <img slot="error" src="/ui/images/blank.png"/>
-              </vue-load-image>
-            </p>
-
-            <h5 class="title">{{item.name}}</h5>
-            <p :class="[runningScrapers.includes(item.id) ? 'invisible' : '']">
-              <small v-if="item.last_update !== '0001-01-01T00:00:00Z'">
-                Updated {{formatDistanceToNow(parseISO(item.last_update))}} ago</small>
-              <small v-else>{{$t('Never scraped')}}</small>
-            </p>
-            <p :class="[runningScrapers.includes(item.id) ? '' : 'invisible']">
-              <small>{{$t('Scraping now...')}}</small>
-            </p>
-            <div class="switch">
-              <b-switch :value="item.is_enabled" @input="$store.dispatch('optionsSites/toggleSite', {id: item.id})"/>
-            </div>
-            <div class="menu">
-              <b-dropdown aria-role="list" class="is-pulled-right" position="is-bottom-left">
-                <template slot="trigger">
-                  <b-icon icon="dots-vertical"></b-icon>
-                </template>
-                <b-dropdown-item aria-role="listitem" @click="taskScrape(item.id)">
-                  {{$t('Run this scraper')}}
-                </b-dropdown-item>
-                <b-dropdown-item aria-role="listitem" @click="forceSiteUpdate(item.name)">
-                  {{$t('Force update scenes')}}
-                </b-dropdown-item>
-                <b-dropdown-item aria-role="listitem" @click="deleteScenes(item.name)">
-                  {{$t('Delete scraped scenes')}}
-                </b-dropdown-item>
-              </b-dropdown>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <h3 class="title">{{$t('JAVR scraper')}}</h3>
     <div class="columns is-multiline">
       <div class="column is-multiline is-one-third">
